@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { StyledRegisterPage } from './style';
 import RegisterForm from '../../components/Form/RegisterForm';
 import IllustrationBox from '../../components/IllustrationBox';
@@ -8,7 +10,8 @@ import { StyledContainer, StyledGridBox } from '../../styles/grid';
 import { StyledTitle } from '../../styles/typography';
 
 const RegisterPage = () => (
-    <StyledRegisterPage>
+  <>
+  <StyledRegisterPage>
       <StyledContainer>
         <div className='flexGrid'>
           <div className='left'>
@@ -29,6 +32,21 @@ const RegisterPage = () => (
         </div>
       </StyledContainer>
     </StyledRegisterPage>
+
+    <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
+  </>
+    
   );
 
 export default RegisterPage;

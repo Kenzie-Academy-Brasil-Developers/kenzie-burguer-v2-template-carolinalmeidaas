@@ -1,3 +1,4 @@
+
 export interface IDefaultProvideProps{
   children: React.ReactNode;
 }
@@ -14,9 +15,6 @@ export interface IUserContextProvider{
   userRegister: (data: IRegisterFormValues) => Promise<void>;
   userLogin: (data: IloginFormValues) => Promise<void>;
   userLogout: () => void;
-  modal: boolean;
-  setModal:React.Dispatch<React.SetStateAction<boolean>>;
-  renderProducts: () => Promise<void>;
 }
 
 export interface IloginFormValues{
@@ -27,6 +25,7 @@ export interface IRegisterFormValues{
   name: string;
   email: string;
   password: string;
+  passwordConfirmation: string;
 }
 
 export interface IProducts{
@@ -35,4 +34,8 @@ export interface IProducts{
   category: string;
   price: number;
   img: string;
+}
+
+export interface IProductsProps {
+  product: IProducts;
 }
