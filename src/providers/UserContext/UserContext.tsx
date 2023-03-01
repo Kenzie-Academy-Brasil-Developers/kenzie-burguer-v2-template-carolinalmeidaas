@@ -30,7 +30,6 @@ export const UserProvider = ({ children }: IDefaultProvideProps) => {
         });
         nagivate('/shop');
       } catch (error) {
-        console.log(error);
         nagivate('/');
       }
     } else {
