@@ -1,4 +1,5 @@
 import { createContext, useState } from 'react';
+import { toast } from 'react-toastify';
 import { ICartContextProvider, IDefaultProvideProps, IProducts } from './type';
 import { api } from '../../services/api';
 
@@ -31,7 +32,12 @@ export const CartProvider = ({ children }: IDefaultProvideProps) => {
   };
 
   const addToCart = (product: IProducts) => {
-    setAddProduct([...addProduct, product]);
+    
+      if (!addProduct.some((p) => p.id === product.id)) {
+        setAddProduct([...addProduct, product]);
+      } else {
+        toast.error("Produto já foi adicionado");
+      }
   };
 
   const removeItem = (item: IProducts) => {

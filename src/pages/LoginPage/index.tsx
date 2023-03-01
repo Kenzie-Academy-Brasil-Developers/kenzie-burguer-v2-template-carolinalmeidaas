@@ -1,8 +1,8 @@
+import { ToastContainer } from 'react-toastify';
 import { StyledLoginPage } from './style';
 import LoginForm from '../../components/Form/LoginForm';
 import IllustrationBox from '../../components/IllustrationBox';
 
-import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import { StyledButtonLink } from '../../styles/button';
