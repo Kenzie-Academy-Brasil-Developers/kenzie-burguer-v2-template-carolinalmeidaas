@@ -24,13 +24,13 @@ const SearchForm = () => {
     setAllProducts(searchProducts)
   }, [search]);
 
-  const filter = (e: React.FormEvent<HTMLInputElement>) => {
-    e.preventDefault();
+  const filter = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
     setSearch(filteredProducts);
   };
 
   return (
-    <StyledSearchForm onSubmit={(e) => filter(e)}>
+    <StyledSearchForm onSubmit={(event) => filter(event)}>
       <input
         type='text'
         placeholder='Digitar pesquisa'
