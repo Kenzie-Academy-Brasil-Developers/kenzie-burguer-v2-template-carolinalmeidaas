@@ -1,5 +1,7 @@
 import { useContext } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { schema } from './validations';
 import { IloginFormValues } from '../../../providers/UserContext/type';
 import { UserContext } from '../../../providers/UserContext/UserContext';
 import { StyledButton } from '../../../styles/button';
@@ -11,7 +13,7 @@ const LoginForm = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<IloginFormValues>();
+  } = useForm<IloginFormValues>({resolver: yupResolver(schema) });
 
   const { userLogin } = useContext(UserContext);
 
